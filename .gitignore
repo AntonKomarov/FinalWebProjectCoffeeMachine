@@ -1,0 +1,5 @@
+# Project exclude paths
+/src/main/java/listener/
+/src/main/java/locale/
+/src/resources/
+/target/
