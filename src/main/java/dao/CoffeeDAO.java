@@ -1,5 +1,11 @@
 package dao;
 
+import dao.exception.DAOException;
+import entity.Coffee;
+
+import java.util.List;
+
 public interface CoffeeDAO {
-    // метод с кофе который выбрасывает DaoException
+       boolean addCoffee(Coffee coffee) throws DAOException;
+       boolean deleteCoffee(Coffee coffee) throws DAOException;
 }

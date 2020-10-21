@@ -1,7 +1,7 @@
 package service.impl;
 
 import dao.UserDAO;
-import dao.exception.DaoException;
+import dao.exception.DAOException;
 import dao.provider.DAOProvider;
 import entity.Authorization;
 import entity.User;
@@ -26,7 +26,7 @@ public class UserServiceImpl implements UserService {
 
         try {
             user = userDAO.authorization(authorizationData);
-        } catch (DaoException exception){
+        } catch (DAOException exception){
             throw new ServiceException(exception);
         }
 
@@ -37,16 +37,12 @@ public class UserServiceImpl implements UserService {
     public boolean registration(Registration registrationData) throws ServiceException {
         boolean isRegistration = false;
 
-//        if (!GredentionalValidator.isCorrect(registration){
-//            throw new ServiceException("information isn't correct");
-//        }
-
         DAOProvider daoProvider = DAOProvider.getInstance();
         UserDAO userDAO = daoProvider.getUserDAO();
 
         try {
             isRegistration = userDAO.registration(registrationData);
-        } catch (DaoException exception) {
+        } catch (DAOException exception) {
             throw new ServiceException(exception);
         }
         return isRegistration;

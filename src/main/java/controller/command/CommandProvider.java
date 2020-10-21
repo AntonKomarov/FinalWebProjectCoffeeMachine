@@ -1,8 +1,11 @@
 package controller.command;
 
-import controller.impl.AuthorizationCommand;
-import controller.impl.GoToMainPage;
-import controller.impl.RegistrationCommand;
+import controller.command.impl.*;
+import controller.command.impl.coffee.AddCoffeeCommand;
+import controller.command.impl.coffee.DeleteCoffeeCommand;
+import controller.command.impl.coffee_machine.AddCoffeeMachineCommand;
+import controller.command.impl.go_to.GoToErrorPageCommand;
+import controller.command.impl.go_to.GoToMainPageCommand;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -13,7 +16,11 @@ public class CommandProvider {
     public CommandProvider(){
         commands.put(ParameterName.REGISTRATION, new RegistrationCommand());
         commands.put(ParameterName.AUTHORIZATION, new AuthorizationCommand());
-        commands.put(ParameterName.GO_TO_MAIN_PAGE, new GoToMainPage());
+        commands.put(ParameterName.GO_TO_MAIN_PAGE, new GoToMainPageCommand());
+        commands.put(ParameterName.ADD_COFFEE, new AddCoffeeCommand());
+        commands.put(ParameterName.GO_TO_ERROR_PAGE, new GoToErrorPageCommand());
+        commands.put(ParameterName.ADD_COFFEE_MACHINE, new AddCoffeeMachineCommand());
+        commands.put(ParameterName.DELETE_COFFEE, new DeleteCoffeeCommand());
     }
 
     public Command getCommand(String commandName){

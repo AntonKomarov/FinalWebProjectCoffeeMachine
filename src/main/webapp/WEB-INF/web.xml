@@ -16,7 +16,6 @@
         <url-pattern>/controller</url-pattern>
     </servlet-mapping>
 
-
     <servlet>
         <servlet-name>RegistrationController</servlet-name>
         <servlet-class>controller.RegistrationController</servlet-class>

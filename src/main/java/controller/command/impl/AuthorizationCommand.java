@@ -1,4 +1,4 @@
-package controller.impl;
+package controller.command.impl;
 
 import controller.command.Command;
 import entity.Authorization;
@@ -17,11 +17,8 @@ public class AuthorizationCommand implements Command {
     private static final String PARAMETER_LOGIN = "login";
     private static final String PARAMETER_PASSWORD = "password";
 
-//    private static final String MAIN_PAGE = "controller?command=go_to_main_page";
-    private static final String MAIN_PAGE = "WEB-INF/jsp/main.jsp";
-    private static final String INDEX_PAGE = "/index.jsp";
+    private static final String MAIN_PAGE = "controller?command=go_to_main_page";
     private static final String DEFAULT_PAGE = "WEB-INF/jsp/default.jsp";
-
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -51,7 +48,6 @@ public class AuthorizationCommand implements Command {
         } catch(ServiceException exception){
             request.setAttribute("error", "login or password is wrong");
             page = DEFAULT_PAGE;
-            //log
         }
 
         RequestDispatcher dispatcher = request.getRequestDispatcher(page);

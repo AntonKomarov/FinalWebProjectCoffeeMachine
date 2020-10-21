@@ -10,7 +10,7 @@ public class User implements Serializable {
     private int id;
     private String role;
     private String login;
-    // not a goo idea to save password and login
+    // not a good idea to save password and login
 
     public int getId() {
         return id;

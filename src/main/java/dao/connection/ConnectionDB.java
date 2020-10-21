@@ -1,4 +1,4 @@
-package dao;
+package dao.connection;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -12,8 +12,7 @@ public class ConnectionDB {
     private final String LOGIN = "root";
     private final String PASSWORD = "123456";
 
-    ConnectionDB() {
-    }
+    ConnectionDB() {}
 
     public static ConnectionDB getInstance() {
         return instance;

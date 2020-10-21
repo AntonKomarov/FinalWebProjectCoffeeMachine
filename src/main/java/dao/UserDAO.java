@@ -1,11 +1,11 @@
 package dao;
 
-import dao.exception.DaoException;
+import dao.exception.DAOException;
 import entity.Authorization;
 import entity.Registration;
 import entity.User;
 
 public interface UserDAO {
-    User authorization(Authorization authorization) throws DaoException;
-    boolean registration(Registration registration) throws DaoException;
+    User authorization(Authorization authorization) throws DAOException;
+    boolean registration(Registration registration) throws DAOException;
 }

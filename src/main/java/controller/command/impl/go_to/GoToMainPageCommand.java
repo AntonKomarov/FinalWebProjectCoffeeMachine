@@ -1,4 +1,4 @@
-package controller.impl;
+package controller.command.impl.go_to;
 
 import controller.command.Command;
 
@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class GoToMainPage implements Command {
+public class GoToMainPageCommand implements Command {
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.getRequestDispatcher("WEB-INF/jsp/main.jsp").forward(request, response);

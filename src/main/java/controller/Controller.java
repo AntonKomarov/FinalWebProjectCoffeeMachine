@@ -19,16 +19,24 @@ public class Controller extends HttpServlet {
         super();
     }
 
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         System.out.println("GET");
         process(request, response);
     }
 
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         System.out.println("POST");
         process(request, response);
 //        request.getSession(true).setAttribute("local", request.getParameter("local"));
 //        request.getRequestDispatcher("index.jsp").forward(request, response);
+    }
+
+    @Override
+    protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        System.out.println("DELETE");
+        process(req,resp);
     }
 
     private void process(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
