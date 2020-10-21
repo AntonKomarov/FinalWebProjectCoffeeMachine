@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app version="3.1"
+         xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         metadata-complete="false">
+    
+    <servlet>
+        <servlet-name>Controller</servlet-name>
+        <servlet-class>controller.Controller</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>Controller</servlet-name>
+        <url-pattern>/controller</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ServletForCoffee</servlet-name>
+        <servlet-class>controller.ServletForCoffee</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ServletForCoffee</servlet-name>
+        <url-pattern>/servletforcoffee</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>RegistrationController</servlet-name>
+        <servlet-class>controller.RegistrationController</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>RegistrationController</servlet-name>
+        <url-pattern>/registrationController</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AuthorizationController</servlet-name>
+        <servlet-class>controller.AuthorizationController</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AuthorizationController</servlet-name>
+        <url-pattern>/authorizationController</url-pattern>
+    </servlet-mapping>
+    
+<!--    <listener>-->
+<!--        <listener-class>listener.ProjectRequestListener</listener-class>-->
+<!--    </listener>-->
+
+</web-app>
