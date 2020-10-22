@@ -7,6 +7,7 @@ import controller.command.impl.coffee_machine.AddCoffeeMachineCommand;
 import controller.command.impl.coffee_machine.DeleteCoffeeMachineCommand;
 import controller.command.impl.go_to.GoToErrorPageCommand;
 import controller.command.impl.go_to.GoToMainPageCommand;
+import controller.command.impl.order.TakeOrderCommand;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -23,6 +24,7 @@ public class CommandProvider {
         commands.put(ParameterName.ADD_COFFEE_MACHINE, new AddCoffeeMachineCommand());
         commands.put(ParameterName.DELETE_COFFEE, new DeleteCoffeeCommand());
         commands.put(ParameterName.DELETE_COFFEE_MACHINE, new DeleteCoffeeMachineCommand());
+        commands.put(ParameterName.TAKE_ORDER, new TakeOrderCommand());
     }
 
     public Command getCommand(String commandName){

@@ -59,5 +59,22 @@
 
 
 
+<form action ="controller" method="post">
+
+    <input type = "hidden" name="command" value="take_order">
+    Выберите кофе и введите данные для оплаты:<br />
+    <input type="text" name="coffee_name" value=""><br />
+    <input type="text" name="coffee_value" value=""><br />
+    <input type="text" name="card_number" value=""><br />
+    <input type="text" name="ownerName" value=""><br />
+    <input type="text" name="endDate" value=""><br />
+    <input type="text" name="cvv" value=""><br />
+
+    <input type="submit" value="Оплатить"><br />
+
+</form>
+
+
+
 </body>
 </html>
