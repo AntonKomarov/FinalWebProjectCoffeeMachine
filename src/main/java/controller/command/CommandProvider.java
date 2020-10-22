@@ -4,6 +4,7 @@ import controller.command.impl.*;
 import controller.command.impl.coffee.AddCoffeeCommand;
 import controller.command.impl.coffee.DeleteCoffeeCommand;
 import controller.command.impl.coffee_machine.AddCoffeeMachineCommand;
+import controller.command.impl.coffee_machine.DeleteCoffeeMachineCommand;
 import controller.command.impl.go_to.GoToErrorPageCommand;
 import controller.command.impl.go_to.GoToMainPageCommand;
 
@@ -21,6 +22,7 @@ public class CommandProvider {
         commands.put(ParameterName.GO_TO_ERROR_PAGE, new GoToErrorPageCommand());
         commands.put(ParameterName.ADD_COFFEE_MACHINE, new AddCoffeeMachineCommand());
         commands.put(ParameterName.DELETE_COFFEE, new DeleteCoffeeCommand());
+        commands.put(ParameterName.DELETE_COFFEE_MACHINE, new DeleteCoffeeMachineCommand());
     }
 
     public Command getCommand(String commandName){

@@ -7,5 +7,6 @@ public enum ParameterName {
     ADD_COFFEE,
     GO_TO_ERROR_PAGE,
     ADD_COFFEE_MACHINE,
-    DELETE_COFFEE
+    DELETE_COFFEE,
+    DELETE_COFFEE_MACHINE
 }

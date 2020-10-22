@@ -24,6 +24,16 @@
 
 </form>
 
+<form action ="controller" method="post">
+
+    <input type = "hidden" name="command" value="delete_coffee">
+    Вид кофе который хотите удалить:<br />
+    <input type="text" name="name" value=""><br />
+
+    <input type="submit" value="Удалить"><br />
+
+</form>
+
 
 <form action ="controller" method="post">
 
@@ -37,15 +47,16 @@
 
 </form>
 
-<form action ="controller" method="delete">
+<form action ="controller" method="post">
 
-    <input type = "hidden" name="command" value="delete_coffee">
-    Вид кофе который хотите удалить:<br />
-    <input type="text" name="name" value=""><br />
+    <input type = "hidden" name="command" value="delete_coffee_machine">
+    Вид модель кофемашины которую хотите удалить:<br />
+    <input type="text" name="model" value=""><br />
 
     <input type="submit" value="Удалить"><br />
 
 </form>
+
 
 
 </body>

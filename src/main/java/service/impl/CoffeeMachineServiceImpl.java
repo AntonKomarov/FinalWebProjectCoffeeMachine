@@ -22,4 +22,20 @@ public class CoffeeMachineServiceImpl implements CoffeeMachineService {
         }
         return isAdded;
     }
+
+    @Override
+    public boolean deleteCoffeeMachineByModel(CoffeeMachine coffeeMachine) throws ServiceException {
+        boolean isDeleted = false;
+
+        DAOProvider daoProvider = DAOProvider.getInstance();
+        CoffeeMachineDAO coffeeMachineDAO = daoProvider.getCoffeeMachineDAO();
+
+        try{
+            isDeleted = coffeeMachineDAO.deleteCoffeeMachineByModel(coffeeMachine);
+        } catch (DAOException e) {
+            throw new ServiceException(e);
+        }
+
+        return isDeleted;
+    }
 }

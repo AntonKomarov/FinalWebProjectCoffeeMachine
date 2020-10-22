@@ -55,4 +55,42 @@ public class CoffeeMachineDAOImpl implements CoffeeMachineDAO {
             return isAdded;
         }
     }
+
+    @Override
+    public boolean deleteCoffeeMachineByModel(CoffeeMachine coffeeMachine) throws DAOException {
+        ConnectionDB connectionDB = null;
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        boolean isDeleted = false;
+
+        try {
+            connectionDB = ConnectionDB.getInstance();
+            connection = connectionDB.getConnection();
+            preparedStatement = connection.prepareStatement("DELETE FROM coffee_machines WHERE model='" + coffeeMachine.getModel() + "';");
+
+            if (preparedStatement.executeUpdate() == 1) {
+                isDeleted = true;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } finally {
+            if (preparedStatement != null) {
+                try {
+                    preparedStatement.close();
+                } catch (SQLException exception) {
+                    throw new DAOException(exception);
+                }
+                if (connection != null) {
+                    try {
+                        connection.close();
+                    } catch (SQLException e) {
+                        throw new DAOException(e);
+                    }
+                }
+            }
+        }
+        return isDeleted;
+    }
 }
